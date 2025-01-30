@@ -22,7 +22,7 @@ async function generateContent(userInput) {
 }
 
 app.get('/send', async (req, res) => {
-    const userInput = `${req.query.input} the output should be a working cpp code without any comments`;
+    const userInput = `${req.query.input}`;
 
 
     if (!userInput) {
