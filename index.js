@@ -1,7 +1,6 @@
 const express = require("express");
 const dotenv = require('dotenv').config();
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-const cors = require('cors');
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
@@ -9,7 +8,6 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(cors());
 
 async function generateContent(userInput) {
     try {
